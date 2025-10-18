@@ -263,6 +263,69 @@ section p {
 
 
 
+
+
+/* Container styling (optional) */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Publication layout */
+.publication {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+/* Image/video container */
+.pub-image {
+  width: 220px;
+  height: 150px;
+  background-color: #f0f0f0; /* letterbox color */
+  border-radius: 8px;
+  flex-shrink: 0; /* prevent shrinking in flex layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Make img/video scale proportionally to fit the box */
+.pub-image img,
+.pub-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* no cropping, scale to fit */
+  display: block;
+  border-radius: 8px;
+}
+
+/* Text content */
+.pub-content {
+  flex: 1;
+}
+
+/* Optional styling */
+.pub-title {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.pub-authors {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.pub-extra a {
+  text-decoration: none;
+  color: #002F6C;
+}
+
+
 /* ========== TALKS LIST ========== */
 
 .talk-list {
