@@ -62,6 +62,8 @@ a:hover {
   border: 2px solid var(--border);
 }
 
+
+
 .header-text h1 {
   font-size: 1.8rem;
   margin: 0;
@@ -262,6 +264,16 @@ section p {
 }
 
 
+.pub-title .pub-link {
+  color: inherit;           /* keeps the same color as the h3 */
+  text-decoration: none;    /* removes underline */
+}
+
+.pub-title .pub-link:hover {
+  text-decoration: underline; /* optional hover effect */
+}
+
+
 
 
 
@@ -336,6 +348,42 @@ section p {
 .talk-list li {
   margin-bottom: 10px;
 }
+
+
+
+.talk-images-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;            /* horizontal scrolling */
+  padding-bottom: 0.5rem;
+  scroll-behavior: smooth;     /* smooth scroll when using scrollbar or JS */
+}
+
+.talk-images-scroll::-webkit-scrollbar {
+  height: 8px;                 /* optional: customize scrollbar height */
+}
+
+.talk-images-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.talk-images-scroll img {
+  flex: 0 0 auto;             /* prevents shrinking, keeps original aspect ratio */
+  height: 230px;              /* fixed row height */
+  object-fit: cover;          /* crop to fill */
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.talk-images-scroll img:hover {
+  transform: scale(1.05);
+}
+
+
+
+
 
 /* ========== FOOTER ========== */
 
