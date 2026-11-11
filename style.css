@@ -120,6 +120,61 @@ section p {
   margin-bottom: 16px;
 }
 
+.affiliation-logos {
+  --tum-ratio: calc(408.16 / 212.46684);
+  --tum-scale: 1.1;
+  --deepmind-ratio: calc(1925 / 252);
+  --logo-height: min(30px, calc(100cqw / 3 / var(--deepmind-ratio)));
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  margin: 20px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.affiliation-logos a {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.affiliation-logos img {
+  display: block;
+  height: var(--logo-height);
+  width: auto;
+  border-radius: 0;
+}
+
+.affiliation-logos .logo-tum {
+  height: calc(var(--logo-height) * var(--tum-scale));
+}
+
+/* Center EPFL between the visible edges of the outer logos. */
+.affiliation-logos .logo-epfl {
+  transform: translateX(
+    calc(var(--logo-height) * (var(--tum-ratio) * var(--tum-scale) - var(--deepmind-ratio)) / 4)
+  );
+}
+
+/* The PNG's artwork is 1925 × 252 px and starts at (52, 107). */
+.affiliation-logos .logo-deepmind-frame {
+  position: relative;
+  width: calc(var(--logo-height) * var(--deepmind-ratio));
+  height: var(--logo-height);
+  overflow: hidden;
+}
+
+.affiliation-logos .logo-deepmind {
+  position: absolute;
+  top: calc(var(--logo-height) * -107 / 252);
+  left: calc(var(--logo-height) * -52 / 252);
+  height: calc(var(--logo-height) * 439 / 252);
+  max-width: none;
+}
+
 /* ========== RESEARCH PROJECTS ========== */
 
 .projects-grid {
